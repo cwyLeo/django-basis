@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import testdb
+from . import testdb,pagelinks
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('testdb/', testdb.testdb),
+    path('search/', pagelinks.search_form),
 ]
