@@ -18,3 +18,18 @@
 5. 配置静态文件，我们在根目录下创建static文件夹，并在settings.py中添加STATICFILES_DIRS = [ 
     os.path.join(BASE_DIR, "static"), 
 ]
+6. 注意引入路径的使用settings.py中定义的文件别名，在模板中使用静态文件需要添加```{% load static %}```,引入图片方式为```src="{% static 'images/*.png' %}"```
+一些提高效率的小彩蛋：模板继承，即网页中会有一些组件结构需要在其他网页得到复用，如nav,footer等
+父模板定义如下：
+```
+{% block 名称 %} 
+预留给子模板的区域，可以设置设置默认内容
+{% endblock 名称 %}
+```
+子模板定义如下：
+```
+{% extends "父模板路径"%} 
+{ % block 名称 % }
+内容 
+{% endblock 名称 %}
+```
