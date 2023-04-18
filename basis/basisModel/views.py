@@ -1,7 +1,8 @@
 from django.shortcuts import render
 
 # Create your views here.
-from models import *
+from basisModel.models import *
 
-names = [i for i in dir(Build) if i not in dir(Base)]
-print(names)
+def getcust(name):
+    cust = Customer.objects.get(name=name)
+    return cust

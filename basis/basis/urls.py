@@ -21,4 +21,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('testdb/', testdb.testdb),
     path('search/', pagelinks.search_form),
+    path('child/', pagelinks.child),
+    path('post/',pagelinks.search_post),
 ]
